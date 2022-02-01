@@ -1,23 +1,28 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import "./App.css";
 import Container from "@mui/material/Container";
 import ResponsiveAppBar from "./AppBar";
-import profile from "./gaurav.png"; // relative path to image
-import Paper from "@mui/material/Paper";
-
+import "./App.css";
+import ProfileAvatar from "./ProfileAvatar";
+import Summary from "./Summary";
+import { Grid } from "@mui/material";
 function App() {
   return (
     <Container maxWidth="lg">
       <ResponsiveAppBar></ResponsiveAppBar>
-      <Box sx={{ bgcolor: "#e2d6f3", height: "100vh" }}>
-        <Paper elevation={3} sx={{ width: 230, height: 260 }}>
-          {" "}
-          <img src={profile} alt="Profile"></img>
-          Gaurav Thorat <br />
-          Senior Frontend Engineer
-        </Paper>
-      </Box>
+      <Grid container spacing={2}>
+        <Grid item xs={6} md={4}>
+          <ProfileAvatar></ProfileAvatar>
+        </Grid>
+        <Grid item xs={6} md={8}>
+          <Summary />
+        </Grid>
+        <Grid item xs={6} md={4}>
+          <h4>Certificates</h4>
+        </Grid>
+        <Grid item xs={6} md={8}>
+          <h4>Awards</h4>
+        </Grid>
+      </Grid>
     </Container>
   );
 }
