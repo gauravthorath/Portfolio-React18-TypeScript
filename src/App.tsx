@@ -21,6 +21,7 @@ function App() {
         </Grid>
         <Grid item xs={6} md={8}>
           <h4>Awards</h4>
+          Start Award
         </Grid>
       </Grid>
     </Container>
